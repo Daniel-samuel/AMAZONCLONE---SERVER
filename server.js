@@ -35,7 +35,7 @@ app.use("/api", ownerRoutes);
 app.use("/api", userRoutes);
 app.use("/api", reviewRoutes);
 
-app.listen(port, (err) => {
+app.listen(process.env.PORT || port, (err) => {
   if (err) {
     console.log(err);
   } else console.log(`server is running on ${port}`);

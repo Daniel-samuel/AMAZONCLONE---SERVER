@@ -87,7 +87,7 @@ router.get("/auth/user", verifyToken, async (req, res) => {
 router.put("/auth/user", verifyToken, async (req, res) => {
   try {
     let user = await User.findOne({ _id: req.decoded._id });
-    console.log("decoded", req.decoded, "user:", user);
+    console.log("decoded", req.decoded, "_id:", _id, "user:", user);
 
     if (req.body.name) user.name = req.body.name;
     if (req.body.email) user.email = req.body.email;
